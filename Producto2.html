@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Open Sans";
+    }
+</style>
+<body class="flex flex-col min-h-screen">
+    
+    <header class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="images/logo.png" alt="H&M Logo" class="h-8 w-auto mr-6 cursor-pointer" />
+            <!-- Menu hamburguesa -->
+            <button aria-label="Abrir menú" class="mr-6 md:hidden focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            </button>
+            <!-- Menú principal: oculto en móvil, visible en md+ -->
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-600">
+                <a href="#" class="text-black border-b-2 border-black pb-1">INICIO</a>
+                <a href="#" class="hover:text-black transition">MUJER</a>
+                <a href="#" class="hover:text-black transition">HOMBRE</a>
+                <a href="#" class="hover:text-black transition">NIÑOS</a>
+                <a href="#" class="hover:text-black transition">HOME</a>
+            </nav>
+        </div>
+
+        <!-- Íconos a la derecha -->
+        <div class="flex items-center space-x-6 text-gray-600">
+            <!-- Buscar -->
+            <button aria-label="Buscar" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Usuario -->
+            <button aria-label="Perfil" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.5 21a8.38 8.38 0 0113 0" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Favoritos -->
+            <button aria-label="Favoritos" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Carrito -->
+            <button aria-label="Carrito" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7" cy="21" r="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="17" cy="21" r="1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <div class="max-w-6xl mx-auto px-4">
+            <!-- Título de la página -->
+            <h1 class="text-2xl font-bold py-6">NOVEDADES PARA MUJER</h1>
+            
+            <!-- Carrusel de productos (5 a la vez) -->
+            <div class="relative mb-8">
+                <div class="overflow-hidden">
+                    <div id="carousel" class="flex">
+                        <div class="flex carousel-container w-full">
+                            <!-- Los elementos del carrusel -->
+                            <div class="carousel-item w-1/5 flex-shrink-0 px-2">
+                                <img src="images/carrousel_1.png" alt="Producto 1" class="h-64 w-full object-cover" />
+                            </div>
+                            <div class="carousel-item w-1/5 flex-shrink-0 px-2">
+                                <img src="images/carrousel_2.png" alt="Producto 2" class="h-64 w-full object-cover" />
+                            </div>
+                            <div class="carousel-item w-1/5 flex-shrink-0 px-2">
+                                <img src="images/carrousel_3.png" alt="Producto 3" class="h-64 w-full object-cover" />
+                            </div>
+                            <div class="carousel-item w-1/5 flex-shrink-0 px-2">
+                                <img src="images/carrousel_4.png" alt="Producto 4" class="h-64 w-full object-cover" />
+                            </div>
+                            <div class="carousel-item w-1/5 flex-shrink-0 px-2">
+                                <img src="images/carrousel_5.png" alt="Producto 5" class="h-64 w-full object-cover" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <button 
+                    class="absolute top-1/2 left-2 -translate-y-1/2 bg-white/70 rounded-full p-2 focus:outline-none"
+                    id="prevBtn"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button 
+                    class="absolute top-1/2 right-2 -translate-y-1/2 bg-white/70 rounded-full p-2 focus:outline-none"
+                    id="nextBtn"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+                
+                <!-- Indicadores del carrusel -->
+                <div class="flex justify-center mt-4 space-x-2">
+                    <button class="w-2 h-2 rounded-full bg-gray-800 indicator" data-index="0"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 indicator" data-index="1"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 indicator" data-index="2"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 indicator" data-index="3"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 indicator" data-index="4"></button>
+                </div>
+            </div>
+            
+            <!-- Sección de descripción del producto -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Imágenes del producto con altura fija -->
+                <div class="grid grid-cols-2 gap-0 h-[550px]">
+                    <div class="col-span-1 h-full">
+                        <img 
+                            src="images/product_1_1.png" 
+                            alt="Modelo con producto" 
+                            class="w-full h-full object-cover cursor-pointer product-image"
+                            data-zoom="true"
+                        />
+                    </div>
+                    <div class="col-span-1 flex flex-col h-full">
+                        <img 
+                            src="images/product_1_2.png" 
+                            alt="Detalle del producto" 
+                            class="w-full h-1/2 object-cover cursor-pointer product-image"
+                            data-zoom="true"
+                        />
+                        <img 
+                            src="images/product_1_3.png" 
+                            alt="Textura del producto" 
+                            class="w-full h-1/2 object-cover cursor-pointer product-image"
+                            data-zoom="true"
+                        />
+                    </div>
+                </div>
+                
+                <!-- Detalles del producto -->
+                <div>
+                    <h2 class="text-xl mb-2">Top con detalles decorativos</h2>
+                    <p class="text-lg font-medium mb-4">s/ 179</p>
+                    
+                    <div class="mb-4">
+                        <p class="font-medium mb-2">COLOR: Blanco</p>
+                        <div class="border border-gray-300 p-2 inline-block">
+                            <img 
+                                src="images/carrousel_1.png" 
+                                alt="Color Blanco" 
+                                class="w-16 h-16 object-cover"
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <p class="font-medium mb-2">TALLA MUJER</p>
+                        <div class="flex space-x-2">
+                            <button class="border border-gray-300 px-4 py-2 min-w-[4rem] text-center">S</button>
+                            <button class="border border-gray-300 px-4 py-2 min-w-[4rem] text-center">M</button>
+                            <button class="border border-gray-300 px-4 py-2 min-w-[4rem] text-center">L</button>
+                            <button class="border border-gray-300 px-4 py-2 min-w-[4rem] text-center">XL</button>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600 mb-4">
+                        COMPRA ANTES DE LAS 15 HRS Y RECIBE EL PRÓXIMO DÍA HÁBIL
+                    </p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex items-center">
+                            <span class="mr-2">3</span>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                            <span>★</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Acordeón de información adicional -->
+                    <div class="border-t border-gray-300">
+                        <button class="flex justify-between items-center w-full py-4 accordion-btn">
+                            <span class="font-medium">DESCRIPCIÓN</span>
+                            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden pb-4">
+                            <p>Top blanco con detalles decorativos en la parte frontal. Fabricado en tejido ligero y transpirable, ideal para primavera-verano.</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-300">
+                        <button class="flex justify-between items-center w-full py-4 accordion-btn">
+                            <span class="font-medium">MATERIALES</span>
+                            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden pb-4">
+                            <p>100% Algodón orgánico</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-300">
+                        <button class="flex justify-between items-center w-full py-4 accordion-btn">
+                            <span class="font-medium">GUÍA DE CUIDADOS</span>
+                            <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content hidden pb-4">
+                            <p>Lavar a máquina a 30°C. No usar blanqueador. No secar en secadora. Planchar a temperatura baja.</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-300"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal de zoom simplificado -->
+        <div id="zoomModal" class="fixed inset-0 bg-black/75 flex items-center justify-center z-50 hidden">
+            <div class="relative max-w-4xl max-h-screen p-4">
+                <button id="closeModal" class="absolute top-0 right-0 bg-white rounded-full p-2 m-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="overflow-hidden" id="zoomContainer">
+                    <img id="zoomImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain transition-transform duration-300" />
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer corregido -->
+    <footer class="bg-white text-gray-700 px-6 py-10 text-sm mt-auto border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <!-- Sección de columnas de enlaces -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- Colecciones -->
+                <div>
+                    <h3 class="font-semibold mb-4">Colecciones</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">MUJER</a></li>
+                        <li><a href="#" class="hover:underline">HOMBRE</a></li>
+                        <li><a href="#" class="hover:underline">NIÑOS</a></li>
+                        <li><a href="#" class="hover:underline">HOME</a></li>
+                    </ul>
+                </div>
+                <!-- Información Corporativa -->
+                <div>
+                    <h3 class="font-semibold mb-4">Información Corporativa</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">TRABAJAR EN H&M</a></li>
+                        <li><a href="#" class="hover:underline">ACERCA DEL GRUPO H&M</a></li>
+                        <li><a href="#" class="hover:underline">RESPONSABILIDAD SOCIAL</a></li>
+                        <li><a href="#" class="hover:underline">PRENSA</a></li>
+                        <li><a href="#" class="hover:underline">RELACIONES CON INVERSIONISTAS</a></li>
+                        <li><a href="#" class="hover:underline">POLÍTICA EMPRESARIAL</a></li>
+                    </ul>
+                </div>
+                <!-- Ayuda -->
+                <div>
+                    <h3 class="font-semibold mb-4">Ayuda</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">SERVICIO AL CLIENTE</a></li>
+                        <li><a href="#" class="hover:underline">NUESTRAS TIENDAS</a></li>
+                        <li><a href="#" class="hover:underline">TERMINOS Y CONDICIONES</a></li>
+                        <li><a href="#" class="hover:underline">LIBRO DE RECLAMACIONES</a></li>
+                        <li><a href="#" class="hover:underline">AVISO DE PRIVACIDAD</a></li>
+                        <li><a href="#" class="hover:underline">CONTACTO</a></li>
+                        <li><a href="#" class="hover:underline">GIFT CARD</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo y región (ahora debajo de las columnas) -->
+            <div class="flex flex-col items-start mt-6">
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="H&M Logo" class="h-12 w-auto" />
+                </div>
+                <div class="flex items-center space-x-2 text-xs font-semibold mt-4">
+                    <span>PERÚ S/.</span>
+                    <a href="#" class="text-gray-400 hover:underline">CAMBIAR REGIÓN</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="mt-10 text-xs text-gray-400">
+                El contenido de esta página web está protegido por copyright y es propiedad de H&M Hennes &amp; Mauritz AB.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+</body>
+</html>

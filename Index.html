@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Open Sans";
+    }
+</style>
+<body  class="flex flex-col min-h-screen">
+    
+    <header class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="images/logo.png" alt="H&M Logo" class="h-8 w-auto mr-6 cursor-pointer" />
+            <!-- Menu hamburguesa -->
+            <button aria-label="Abrir menú" class="mr-6 md:hidden focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            </button>
+            <!-- Menú principal: oculto en móvil, visible en md+ -->
+            <nav class="hidden md:flex space-x-6 font-semibold text-gray-600">
+                <a href="#" class="text-black border-b-2 border-black pb-1">INICIO</a>
+                <a href="#" class="hover:text-black transition">MUJER</a>
+                <a href="#" class="hover:text-black transition">HOMBRE</a>
+                <a href="#" class="hover:text-black transition">NIÑOS</a>
+                <a href="#" class="hover:text-black transition">HOME</a>
+            </nav>
+        </div>
+
+        <!-- Íconos a la derecha -->
+        <div class="flex items-center space-x-6 text-gray-600">
+            <!-- Buscar -->
+            <button aria-label="Buscar" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Usuario -->
+            <button aria-label="Perfil" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.5 21a8.38 8.38 0 0113 0" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Favoritos -->
+            <button aria-label="Favoritos" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+            <!-- Carrito -->
+            <button aria-label="Carrito" class="hover:text-black transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" >
+                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7" cy="21" r="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="17" cy="21" r="1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </button>
+        </div>
+    </header>
+
+
+
+    <main class="mx-auto max-w-7xl px-4 py-6">
+        <!-- Sección Hero -->
+        <section class="relative mb-12">
+            <!-- Banner principal -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                <!-- Imagen principal -->
+                <div class="relative rounded-3xl overflow-hidden me-5">
+                    <img src="images/portada.jpg" alt="Modelo con chaqueta de cuero marrón" class="w-full object-cover h-auto" />
+                </div>
+                
+                <!-- Texto del banner -->
+                <div class="flex flex-col space-y-4">
+                    <h1 class="text-4xl md:text-6xl font-bold tracking-tight italic">NUEVA <br> COLECCIÓN</h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-700 text-right font-semibold">INVIERNO 2025</h2>
+                    <p class="text-lg">¿Quieres vestirte con este outfit?</p>
+                    
+                    <!-- Productos destacados -->
+                    <div class="grid grid-cols-2 gap-5 mt-4">
+                        <!-- Producto 1: Chaqueta -->
+                        <div class="relative group bg-gray-50 p-1 rounded">
+                            <div class="relative overflow-hidden">
+                                <img src="images/chaqueta.jpg" alt="Chaqueta de cuero con piel de cordero" class="w-full h-70 object-cover transition-transform duration-300 group-hover:scale-105" />
+                                <button class="absolute top-2 right-2 text-gray-700 hover:text-black">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="absolute bottom-2 right-2 text-gray-700 hover:text-black">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-2">
+                                <p class="text-sm">Chaqueta de cuero con piel de cordero</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Producto 2: Botas -->
+                        <div class="relative group p-1 rounded" style="background-color: #ECE9E0A3;">
+                            <div class="relative overflow-hidden">
+                                <img src="images/botas.png" alt="Botines de cuero de color negro" class="w-full h-70 object-cover transition-transform duration-300 group-hover:scale-105" />
+                                <button class="absolute top-2 right-2 text-gray-700 hover:text-black">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                                <button class="absolute bottom-2 right-2 text-gray-700 hover:text-black">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-2">
+                                <p class="text-sm">Botines de cuero de color negro</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ver más estilos -->
+                    <div class="mt-6">
+                        <h3 class="font-medium mb-3">Ver más estilos:</h3>
+                        <div class="grid grid-cols-3 gap-3">
+                            <!-- Estilo 1 -->
+                            <div class="overflow-hidden rounded-3xl">
+                                <img src="images/modelo1.jpg" alt="Hombre con abrigo" class="w-full h-50 object-cover hover:opacity-90 transition" />
+                            </div>
+                            <!-- Estilo 2 -->
+                            <div class="overflow-hidden rounded-3xl">
+                                <img src="images/modelo2.jpg" alt="Mujer con abrigo" class="w-full h-50 object-cover hover:opacity-90 transition" />
+                            </div>
+                            <!-- Estilo 3 -->
+                            <div class="overflow-hidden rounded-3xl">
+                                <img src="images/modelo3.jpg" alt="Mujeres con abrigos" class="w-full h-50 object-cover hover:opacity-90 transition" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de compra como enlace -->
+                    <div class="mt-6 flex justify-end">
+                        <a href="#" class="flex items-center bg-[#000000CF] text-white px-8 py-3 text-lg hover:bg-gray-800 transition rounded-full">
+                            <span class="font-medium">Comprar</span>
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer corregido -->
+    <footer class="bg-white text-gray-700 px-6 py-10 text-sm mt-auto border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <!-- Sección de columnas de enlaces -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- Colecciones -->
+                <div>
+                    <h3 class="font-semibold mb-4">Colecciones</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">MUJER</a></li>
+                        <li><a href="#" class="hover:underline">HOMBRE</a></li>
+                        <li><a href="#" class="hover:underline">NIÑOS</a></li>
+                        <li><a href="#" class="hover:underline">HOME</a></li>
+                    </ul>
+                </div>
+                <!-- Información Corporativa -->
+                <div>
+                    <h3 class="font-semibold mb-4">Información Corporativa</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">TRABAJAR EN H&M</a></li>
+                        <li><a href="#" class="hover:underline">ACERCA DEL GRUPO H&M</a></li>
+                        <li><a href="#" class="hover:underline">RESPONSABILIDAD SOCIAL</a></li>
+                        <li><a href="#" class="hover:underline">PRENSA</a></li>
+                        <li><a href="#" class="hover:underline">RELACIONES CON INVERSIONISTAS</a></li>
+                        <li><a href="#" class="hover:underline">POLÍTICA EMPRESARIAL</a></li>
+                    </ul>
+                </div>
+                <!-- Ayuda -->
+                <div>
+                    <h3 class="font-semibold mb-4">Ayuda</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:underline">SERVICIO AL CLIENTE</a></li>
+                        <li><a href="#" class="hover:underline">NUESTRAS TIENDAS</a></li>
+                        <li><a href="#" class="hover:underline">TERMINOS Y CONDICIONES</a></li>
+                        <li><a href="#" class="hover:underline">LIBRO DE RECLAMACIONES</a></li>
+                        <li><a href="#" class="hover:underline">AVISO DE PRIVACIDAD</a></li>
+                        <li><a href="#" class="hover:underline">CONTACTO</a></li>
+                        <li><a href="#" class="hover:underline">GIFT CARD</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Logo y región (ahora debajo de las columnas) -->
+            <div class="flex flex-col items-start mt-6">
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="H&M Logo" class="h-12 w-auto" />
+                </div>
+                <div class="flex items-center space-x-2 text-xs font-semibold mt-4">
+                    <span>PERÚ S/.</span>
+                    <a href="#" class="text-gray-400 hover:underline">CAMBIAR REGIÓN</a>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <p class="mt-10 text-xs text-gray-400">
+                El contenido de esta página web está protegido por copyright y es propiedad de H&M Hennes &amp; Mauritz AB.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
